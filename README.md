@@ -53,5 +53,5 @@ Tourist/
    git clone https://github.com/raghavreddy2107/ap-tourism-website.git
 2. Open index.html in your browser.
 
-Author
+## 🧑‍💻 Author
 Raghavendra Reddy Munnelli - www.linkedin.com/in/raghavendra-reddy-munnelli
