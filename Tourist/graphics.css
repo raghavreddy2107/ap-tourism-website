@@ -1,0 +1,265 @@
+/* Reset default margins */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Background Image */
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('https://traveltradejournal.com/wp-content/uploads/2022/09/Andhra-Pradesh.jpg');
+  background-size: cover;       /* 👈 ensures it fills the container */
+  background-position: center;  /* 👈 keeps it centered */
+  background-repeat: no-repeat; /* 👈 avoids tiling */
+  filter: blur(2px);            /* if you want the blur */
+  transform: scale(1.05);       /* 👈 prevents blur from shrinking visible area */
+  z-index: -1;
+}
+
+
+.background {
+  animation: zoomInBg 20s ease-in-out infinite alternate;
+}
+
+@keyframes zoomInBg {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+
+.state-description {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  font-size: 23px;
+  line-height: 1.6;
+  color: #f0f0f0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Overlay to see text better */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60%;  /* 👈 Only cover top 40% */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);  /* smooth fade */
+  z-index: 0;
+}
+
+/* Main content on top of background */
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.content {
+  animation: slideFadeIn 3s ease-out;
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px #000;
+}
+
+/* Grid for Districts */
+.districts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Responsive: 2 columns on tablets */
+@media (max-width: 900px) {
+  .districts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive: 1 column on phones */
+@media (max-width: 600px) {
+  .districts {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  color: white;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  transform: perspective(1000px) rotateX(2deg);
+  transition: transform 0.3s ease;
+  padding: 0;
+  display: flex;
+  justify-content: center;  /* Center vertically */
+  align-items: center;      /* Center horizontally */
+  text-align: center;       /* Optional: for text content */
+  min-height: 300px; /* Ensures there's some base size */
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  font-size: 17px;
+}
+
+.card-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: blur(8px); /* Works in all browsers */
+  opacity: 0.6; /* Adjust for better visibility */
+  z-index: -1;
+}
+
+.site-header {
+  position: relative;
+  height: 110px;
+  width: 100%;
+  z-index: 10;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    height: 40px;
+  }
+}
+
+.site-footer {
+  background-color: #111;
+  color: #eee;
+  padding: 40px 20px 20px 20px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+  margin: 10px;
+}
+
+.footer-section h4 {
+  margin-bottom: 15px;
+  color: #f8c14d;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section a {
+  color: #eee;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.social-icons img {
+  width: 30px;
+  margin: 0 10px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.map-footer iframe {
+  width: 100%;
+  height: 250px;
+  border: none;
+  border-radius: 8px;
+}
+
+a.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+
+
