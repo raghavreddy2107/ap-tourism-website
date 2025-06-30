@@ -5,7 +5,8 @@ A beautifully designed, fully responsive, multi-page tourism website built using
 
 ## 📸 Preview
 
-![Preview Screenshot](preview.png)
+![Preview Screenshot](preview1.png)
+![Preview Screenshot](preview2.png)
 
 ---
 
